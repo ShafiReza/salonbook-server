@@ -1,6 +1,12 @@
 import cors from "cors";
 import express from "express";
-import  helmet  from "helmet";
+import type { RequestHandler } from "express";
+import helmetImport, { type HelmetOptions } from "helmet";
+
+// Works whether the typings expose the function directly or under `.default`
+const helmet = ((helmetImport as any).default ?? helmetImport) as (
+  options?: Readonly<HelmetOptions>
+) => RequestHandler;
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./config/auth.js";
 import { env } from "./config/env.js";
