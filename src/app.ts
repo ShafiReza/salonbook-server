@@ -2,18 +2,16 @@ import cors from "cors";
 import express from "express";
 import type { RequestHandler } from "express";
 import helmetImport, { type HelmetOptions } from "helmet";
-
-// Works whether the typings expose the function directly or under `.default`
-const helmet = ((helmetImport as any).default ?? helmetImport) as (
-  options?: Readonly<HelmetOptions>
-) => RequestHandler;
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./config/auth.js";
 import { env } from "./config/env.js";
 import { errorHandler, notFound } from "./middleware/errorHandler.js";
 import { apiLimiter, authLimiter } from "./middleware/rateLimit.js";
 import routes from "./routes/index.js";
-
+// Works whether the typings expose the function directly or under `.default`
+const helmet = ((helmetImport as any).default ?? helmetImport) as (
+  options?: Readonly<HelmetOptions>
+) => RequestHandler;
 const app = express();
 app.set("trust proxy", 1);
 
