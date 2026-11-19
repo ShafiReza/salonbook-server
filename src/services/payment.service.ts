@@ -1,3 +1,4 @@
+
 import Stripe from "stripe";
 import { env } from "../config/env.js";
 import { Appointment } from "../models/appointment.model.js";
