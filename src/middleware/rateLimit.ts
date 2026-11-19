@@ -1,4 +1,4 @@
-import rateLimit from "express-rate-limit";
+import { rateLimit } from "express-rate-limit";
 
 const base = { standardHeaders: "draft-7" as const, legacyHeaders: false };
 const msg = (m: string) => ({ success: false, code: "RATE_LIMITED", message: m });
