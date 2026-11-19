@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 import { env } from "./env.js";
 import { Appointment } from "../models/appointment.model.js";
