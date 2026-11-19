@@ -1,6 +1,6 @@
 import cors from "cors";
 import express from "express";
-import { default as helmet } from "helmet";
+import  helmet  from "helmet";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./config/auth.js";
 import { env } from "./config/env.js";
