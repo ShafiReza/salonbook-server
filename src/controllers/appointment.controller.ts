@@ -1,4 +1,3 @@
-
 import type { Request, Response } from "express";
 import { currentUser } from "../middleware/auth.js";
 import * as svc from "../services/appointment.service.js";
