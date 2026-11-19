@@ -1,4 +1,3 @@
-
 import { Types } from "mongoose";
 import { TIME_SLOTS } from "../config/constants.js";
 import { Appointment } from "../models/appointment.model.js";
